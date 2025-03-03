@@ -1,9 +1,11 @@
+require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 
 const { getStoredItems, storeItems } = require('./data/items');
 
 const app = express();
+const port = 4000
 
 app.use(bodyParser.json());
 
@@ -38,4 +40,4 @@ app.post('/items', async (req, res) => {
   res.status(201).json({ message: 'Stored new item.', item: newItem });
 });
 
-app.listen("https://myntra-clone-gnyn.vercel.app/");
+app.listen(process.env.PORT);
