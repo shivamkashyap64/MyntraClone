@@ -39,5 +39,7 @@ app.post('/items', async (req, res) => {
   await storeItems(updatedItems);
   res.status(201).json({ message: 'Stored new item.', item: newItem });
 });
+app.listen(process.env.PORT || 4000, () => {
+  console.log(`Server is running on port ${process.env.PORT || 4000}`);
+});
 
-app.listen(process.env.PORT);
