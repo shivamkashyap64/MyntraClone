@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const { getStoredItems, storeItems } = require('./data/items');
 
 const app = express();
-const port = 4000
 
 app.use(bodyParser.json());
 
